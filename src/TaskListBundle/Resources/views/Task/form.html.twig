@@ -1,0 +1,35 @@
+<div>
+    <div>
+        <div>{{ form_errors(form) }}</div>
+        <div>{{ form_errors(form.name) }}</div>
+        <div>
+            {{ form_widget(form.name,  {'attr': {'placeholder':'Name', 'title':'Name', 'class':'form-control'}}) }}
+        </div>
+    </div>
+    <div>
+        <div>{{ form_errors(form.description) }}</div>
+        <div>
+            {{ form_widget(form.description,  {'attr': {'placeholder':'Description', 'title':'Description', 'class':'form-control'}}) }}
+        </div>
+    </div>
+    <div>
+        <div>{{ form_errors(form.due) }}</div>
+        <div>
+            {{ form_widget(form.due,  {'attr': {'placeholder':'Due date', 'title':'Due date', 'class':'form-control date'}}) }}
+        </div>
+    </div>
+    <div>
+        <div>{{ form_errors(form.taskList) }}</div>
+        <div>
+            {{ form_label(form.taskList) }}
+            {{ form_widget(form.taskList,  {'attr': {'placeholder':'Task list', 'title':'Task list', 'class':'form-control'}}) }}
+        </div>
+    </div>
+    <div>
+        <div>{{ form_errors(form.completed) }}</div>
+        <div>
+            {{ form_label(form.completed) }}
+            {{ form_widget(form.completed,  {'attr': {'title':'Completed', 'class':'form-control'}}) }}
+        </div>
+    </div>
+</div>

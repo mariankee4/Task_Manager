@@ -1,0 +1,38 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+        
+    <h1>Task creation</h1>
+
+    <div class="form_error"></div>
+    <form method="POST" class="ajaxForm" action="{{path('task_create')}}" {{ form_enctype(form) }}>
+        <div id="form_body">
+            {% include 'TaskListBundle:Task:form.html.twig' with {'form': form} %}
+            <br />
+            <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+        {{form_rest(form)}}
+    </form>
+
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('task') }}">
+                Back to the list
+            </a>
+        </li>
+    </ul>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript">
+        initAjaxForm();
+        $(document).ready(function() {
+            $('.date').datepicker({ 
+                dateFormat: 'dd-mm-yy',
+                disableTouchKeyboard: true,
+                autoclose: true,
+                minDate: new Date()
+            });
+        });
+    </script>
+{% endblock %}

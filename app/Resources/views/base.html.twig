@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('bundles/tasklist/css/style.css') }}" />
+            <link rel="stylesheet" href="{{ asset('bundles/tasklist/css/jquery-ui-1.10.4.custom.min.css') }}" />
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+            <script type="text/javascript" src="{{ asset('bundles/tasklist/js/jquery-1.11.3.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('bundles/tasklist/js/jquery-ui-1.10.4.custom.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('bundles/tasklist/js/main.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>
